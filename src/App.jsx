@@ -61,17 +61,19 @@ function App() {
     return (
         <>
             <div className="w-full min-h-screen bg-[url(./assets/bg-img.jpg)] bg-cover bg-center overflow-hidden]">
-                <main className="w-full min-h-screen flex flex-col justify-center items-center ">
-                    <section className="bg-red-400 container rounded-lg">
-                        {cards.map((card, i) => (
-                            <CardButton
-                                key={i}
-                                className="w-20 h-20 rounded-md cursor-pointer overflow-hidden bg-pink-400 hover:bg-pink-500 active:bg-pink-600"
-                                props={card}
-                                disabled={card.open || isBoardLocked}
-                                onClick={() => toggleCardOpen(card)}
-                            />
-                        ))}
+                <main className="w-full min-h-screen">
+                    <section className="container mx-auto min-h-screen flex flex-col justify-center items-center">
+                        <div className="bg-sky-400 border-3 border-blue-700 px-4 py-6 rounded-md grid grid-cols-4 gap-4 items-stretch justify-center">
+                            {cards.map((card, i) => (
+                                <CardButton
+                                    key={i}
+                                    className="border-2 sm:w-36 sm:h-36 border-pink-900 rounded-md cursor-pointer overflow-hidden bg-pink-400 hover:bg-pink-500 active:bg-pink-600"
+                                    props={card}
+                                    disabled={card.open || isBoardLocked}
+                                    onClick={() => toggleCardOpen(card)}
+                                />
+                            ))}
+                        </div>
                     </section>
                 </main>
             </div>
