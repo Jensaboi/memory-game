@@ -1,10 +1,13 @@
-export default function Card({ toggleCardOpen, props, ...rest }) {
-    console.log(props);
+export default function CardButton({ toggleCardOpen, props, ...rest }) {
     return (
-        <button onClick={() => toggleCardOpen(props)} {...rest}>
+        <button
+            disabled={props.open}
+            onClick={() => toggleCardOpen(props)}
+            {...rest}
+        >
             {props.open ? (
                 <img
-                    className="w-full"
+                    className="w-full h-full object-cover"
                     src={
                         new URL(`../assets/${props.img}`, import.meta.url).href
                     }
