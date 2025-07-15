@@ -4,7 +4,7 @@ import { allImages } from "./data";
 import { createRandomCardsArr } from "./utility/helper";
 import Confetti from "react-confetti";
 
-const FLIP_CARD_TIMER = 1000; //1sec
+const FLIP_CARD_TIMER = 500; //1sec
 
 function App() {
   const [cards, setCards] = React.useState(() =>
@@ -65,8 +65,8 @@ function App() {
   return (
     <>
       <div className="w-full min-h-screen bg-[url(./assets/bg-img.jpg)] bg-cover bg-center overflow-hidden]">
-        <main className="w-full min-h-screen">
-          <section className="container mx-auto min-h-screen flex flex-col justify-center items-center">
+        <main className="w-full min-h-screen flex flex-col justify-center items-center">
+          <section className="flex flex-col justify-center items-center">
             {isGameWon && (
               <Confetti
                 width={window.innerWidth}
@@ -75,11 +75,11 @@ function App() {
                 numberOfPieces={600}
               />
             )}
-            <div className="bg-sky-400 border-3 border-blue-700 px-4 py-6 rounded-md grid grid-cols-4 gap-4 items-stretch justify-center mb-5">
+            <div className="max-w-[1024px] w-full grid grid-cols-4 gap-2 items-stretch mb-5">
               {cards.map((card, i) => (
                 <CardButton
                   key={i}
-                  className="border-2 sm:w-36 sm:h-36 border-pink-900 rounded-md cursor-pointer overflow-hidden bg-pink-400 hover:bg-pink-500 active:bg-pink-600"
+                  className="border-3 min-h-30 w-full max-h-52 sm:max-h-46 border-pink-900 rounded-lg cursor-pointer overflow-hidden bg-pink-400 hover:bg-pink-500 active:bg-pink-500"
                   props={card}
                   disabled={card.open || isBoardLocked}
                   onClick={() => toggleCardOpen(card)}
