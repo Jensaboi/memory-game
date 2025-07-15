@@ -12,7 +12,7 @@ export default function CardButton({ props, ...rest }) {
                 />
             ) : (
                 <div className="w-full h-full flex flex-col justify-center items-center">
-                    <img src={pawIcon} className="w-full h-full object-cover" />
+                    <img src={pawIcon} className="w-16 h-16 object-cover" />
                 </div>
             )}
         </button>

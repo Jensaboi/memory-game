@@ -61,12 +61,12 @@ function App() {
     return (
         <>
             <div className="w-full min-h-screen bg-[url(./assets/bg-img.jpg)] bg-cover bg-center overflow-hidden]">
-                <main className="w-full">
-                    <section className="container h-full mx-auto flex flex-row justify-center items-center flex-wrap gap-2 rounded-lg">
+                <main className="w-full min-h-screen flex flex-col justify-center items-center ">
+                    <section className="bg-red-400 container rounded-lg">
                         {cards.map((card, i) => (
                             <CardButton
                                 key={i}
-                                className="w-20 h-20 rounded-md cursor-pointer overflow-hidden bg-pink-400"
+                                className="w-20 h-20 rounded-md cursor-pointer overflow-hidden bg-pink-400 hover:bg-pink-500 active:bg-pink-600"
                                 props={card}
                                 disabled={card.open || isBoardLocked}
                                 onClick={() => toggleCardOpen(card)}
