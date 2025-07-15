@@ -6,4 +6,5 @@ export const allImages = [
     "sky.jpg",
     "zuma.jpg",
     "ryder.jpg",
+    "gabby.png",
 ];
